@@ -1,19 +1,16 @@
 <!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="style.css">
+</head>
 
 <body>
-	<style>
-		body{
-			 border-color: black;
-			 background-color:#4e2626;
-			}
-	</style>
-	<h1 style="color:white;">BallSackMan</h2>
-	<p style="color:white;"><strong>BallSackMan is the god of the universe who has made everything and should be prayed to every single day and every hour. He is stronger then anything in the universe combined. He also is a big gamer</strong></p>
+	<h1>BallSackMan</h2>
+	<p><strong>BallSackMan is the god of the universe who has made everything and should be prayed to every single day and every hour. He is stronger then anything in the universe combined. He also is a big gamer</strong></p>
 	<p><iframe src="https://www.youtube.com/embed/WjjEFnFLuWg" width="420" height="315"></iframe></p>
-	<p style="color:white;"><strong>made by 2 very cool people</strong></p>
-	<p style="color: white;">Do you believe in BallSackMan?</p>
-	<select id="believe">
+	<p><strong>made by 2 very cool people</strong></p>
+	<p>Do you believe in BallSackMan?</p>
+	<select id="believe", onChange="window.document.location.href=this.options[this.selectedIndex].value;">
 		<option value="yes">Yes, of course!</option>
-		<option value="no">No</option>
+		<option value="https://google.com">No</option>
 	</select>
 </body>
