@@ -40,3 +40,32 @@ ul li{
     position:absolute;
     right:0;
 }
+
+#shh{
+    font-size: 15px;
+    color: #5a2a2a;
+    right: 1;
+}
+
+#log{
+    font-size: 15px;
+    color:white;
+
+}
+
+#subject{
+    color:white;
+}
+
+h2{
+    color:white;
+    font-family: Verdana;
+}
+
+#button3{
+    display:none;
+}
+
+#button4{
+    display:none;
+}
