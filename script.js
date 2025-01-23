@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const hDegrees = ((now.getHours() / 12) * 360) + ((now.getMinutes() / 60) * 30);
         hour.style.transform = `rotate(${hDegrees}deg)`
-
+        document.querySelector('meta[property="og:description"]')
+        .setAttribute("content", `The time is currently: ${converted}`);
     }
     setInterval(setDate, 1000);
     setDate();
