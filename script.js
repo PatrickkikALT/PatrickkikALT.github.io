@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const hour = document.querySelector('.hour');
     const minute = document.querySelector('.minute');
     const second = document.querySelector('.second')
-    let now = new Date(1200);
+    let now = new Date();
     function setDate() {
-        now = new Date(900);
+        now = new Date();
         let converted = [now.getHours(), now.getMinutes(), now.getSeconds()]
             .map(x => x < 10 ? "0" + x : x)
             .join(":");
