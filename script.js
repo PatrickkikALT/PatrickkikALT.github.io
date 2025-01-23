@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const hour = document.querySelector('.hour');
     const minute = document.querySelector('.minute');
     const second = document.querySelector('.second')
-    let now = new Date();
+    let now = new Date(1200);
     function setDate() {
-        now = new Date();
+        now = new Date(900);
         let converted = [now.getHours(), now.getMinutes(), now.getSeconds()]
             .map(x => x < 10 ? "0" + x : x)
             .join(":");
@@ -17,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const hDegrees = ((now.getHours() / 12) * 360) + ((now.getMinutes() / 60) * 30);
         hour.style.transform = `rotate(${hDegrees}deg)`
-        document.querySelector('meta[property="og:description"]')
-        .setAttribute("content", `The time is currently: ${converted}`);
     }
     setInterval(setDate, 1000);
     setDate();
