@@ -1,5 +1,5 @@
-let i = JSON.parse(localStorage.getItem('gomer')) ?? 0;
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
+    let i = JSON.parse(localStorage.getItem('gomer')) ?? 0;
     document.querySelector("#gomeramount").textContent = `${i} gomer`
     document.querySelector("#gomer").onclick = function() {
         let gomer = new Audio("gomer.wav");
@@ -14,7 +14,8 @@ window.onload = function() {
             document.querySelector("#gomeramount").textContent = `${i} gomer`
         }
     }
-};
-window.onbeforeunload = function() {
-    localStorage['gomer'] = JSON.stringify(i)
-}
+    window.onbeforeunload = function() {
+        localStorage['gomer'] = JSON.stringify(i)
+    }
+})
+
