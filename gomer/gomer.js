@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
             currentCost = 10;
             boughtAutoClicker = false;
             clearInterval(intervalID);
+            autoClickerButton.disabled = false;
             document.querySelector("#gomeramount").textContent = `${formatNum(gomers)} gomer`;
             button.textContent = `Upgrade for ${currentCost} gomers`;
             document.querySelector("#per-click-amount").textContent = `${gomersPerClick} gomer per click`;
