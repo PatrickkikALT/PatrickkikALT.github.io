@@ -5,11 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector("#gomeramount").textContent = `${formatNum(gomers)} gomer`
     let gomer = new Audio("gomer.wav");
     let button = document.querySelector("#per-click-upgrade")
+    let intervalID;
     // Add click functionality to gomer
     document.querySelector("#gomer").onclick = function() {
-        gomer.play();
-        gomers += gomersPerClick;
-        document.querySelector("#gomeramount").textContent = `${formatNum(gomers)} gomer`
+        clickGomer();
     }
 
     let startingCost = JSON.parse(localStorage.getItem('gomerCost')) ?? 10;
@@ -46,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     function turnOnAutoClicker() {
         document.querySelector("#gomeramount").textContent = `${formatNum(gomers)} gomer`;
-        setInterval(clickGomer, interval);
+        intervalID = setInterval(clickGomer, interval);
         boughtAutoClicker = true;
         autoClickerButton.disabled = true;
     };
@@ -64,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
             gomersPerClick = 1;
             currentCost = 10;
             boughtAutoClicker = false;
+            clearInterval(intervalID);
             document.querySelector("#gomeramount").textContent = `${formatNum(gomers)} gomer`;
             button.textContent = `Upgrade for ${currentCost} gomers`;
             document.querySelector("#per-click-amount").textContent = `${gomersPerClick} gomer per click`;
