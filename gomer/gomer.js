@@ -27,10 +27,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    function formatNum(number) {
-        let num = Intl.NumberFormat('en', {notation: "compact"}).format(number);
-        return num;
+    function formatNum(num) {
+        const suffixes = [
+            "", "thousand", "million", "billion", "trillion", 
+            "quadrillion", "quintillion", "sextillion", "septillion", 
+            "octillion", "nonillion", "decillion", "undecillion", 
+            "duodecillion", "tredecillion", "quattuordecillion", 
+            "quindecillion", "sexdecillion", "septendecillion", 
+            "octodecillion", "novemdecillion", "vigintillion"
+        ];
+    
+        let numStr = num.toString();
+        let numLength = numStr.length;
+    
+        let index = Math.floor((numLength - 1) / 3);
+    
+        if (index >= suffixes.length) {
+            return num;
+        }
+        let shortNum = (num / Math.pow(10, index * 3)).toFixed(2);
+    
+        return `${shortNum} ${suffixes[index]}`;
     }
+    
     let boughtAutoClicker = !!JSON.parse(localStorage.getItem('boughtAutoClicker')) ?? !!0;
     let autoClickerButton = document.querySelector("#auto-clicker-upgrade");
     let interval = 1000;
@@ -38,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
         turnOnAutoClicker();
     }
     autoClickerButton.onclick = function() {
-        if (gomers >= 100000) {
+        if (gomers >= 100000 && !boughtAutoClicker) {
             gomers -= 100000;
             turnOnAutoClicker();
         }
