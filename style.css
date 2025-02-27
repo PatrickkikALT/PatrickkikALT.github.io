@@ -11,7 +11,7 @@ body {
 .box {
     width: 45%;
     margin: auto;
-    background: #dfd3ff;
+    background: #dccfff;
     border: 2px solid #a893d8;
     box-shadow: #c2afee 5px 5px;
     border-radius: 10px;
@@ -29,28 +29,34 @@ h1.boxText {
     font-size:25px;
 }
 .topnav {
-    font-family:Josefin;
+    font-family: Josefin;
     background-color: #a893d8;
     overflow: hidden;
     box-shadow: #c2afee 5px 5px;
-    justify-content:center;
-    align-items:center;
-    display:flex;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 20px; 
 }
-  
+
+.topnav .left, .topnav .right {
+    display: flex;
+}
+
 .topnav a {
-    float:left;
     color: #f2f2f2;
-    
     padding: 10px 15px;
     text-decoration: none;
     font-size: 17px;
+    display: block;
 }
-a:hover {
+
+.topnav .right a:hover {
     background-color: #fcd4fa;
     color: black;
 }
+
 
 a {
     text-decoration: none;
