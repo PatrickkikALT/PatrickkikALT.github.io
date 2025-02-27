@@ -1,0 +1,57 @@
+
+@font-face {
+    font-family: Josefin;
+    src: url(assets/JosefinSans-VariableFont_wght.ttf);
+}
+
+body {
+    background-color: #d196f3;
+}
+
+.box {
+    width: 45%;
+    margin: auto;
+    background: #dfd3ff;
+    border: 2px solid #a893d8;
+    box-shadow: #c2afee 5px 5px;
+    border-radius: 10px;
+}
+
+.boxText {
+    font-family:Josefin;
+    margin-left:10px;
+}
+p.boxText {
+    font-size:18px;
+}
+
+h1.boxText {
+    font-size:25px;
+}
+.topnav {
+    font-family:Josefin;
+    background-color: #a893d8;
+    overflow: hidden;
+    box-shadow: #c2afee 5px 5px;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    
+}
+  
+.topnav a {
+    float:left;
+    color: #f2f2f2;
+    
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 17px;
+}
+a:hover {
+    background-color: #fcd4fa;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}

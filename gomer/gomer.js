@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Load previous data, if it doesnt exist, default to 0
+    // Load previous data, if it doesnt exist, default to beginning values
     let gomers = JSON.parse(localStorage.getItem('gomer')) ?? 0;
     let gomersPerClick = JSON.parse(localStorage.getItem('gomerPerClick')) ?? 1;
     document.querySelector("#gomeramount").textContent = `${formatNum(gomers)} gomer`
@@ -37,10 +37,9 @@ document.addEventListener("DOMContentLoaded", function() {
             "octodecillion", "novemdecillion", "vigintillion"
         ];
     
-        let numStr = num.toString();
-        let numLength = numStr.length;
+        let numStr = num.toString(); 
     
-        let index = Math.floor((numLength - 1) / 3);
+        let index = Math.floor((numStr.length - 1) / 3);
     
         if (index >= suffixes.length) {
             return num;
