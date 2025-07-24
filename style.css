@@ -11,7 +11,7 @@ body {
 }
 
 .box {
-    width: 45%;
+    width: 50%;
     margin: auto;
     background: #dccfff;
     border: 2px solid #a893d8;
@@ -82,4 +82,36 @@ a:link {
 
 a:visited {
     color:#9576CC;
+}
+
+.project-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.project-list li {
+    
+  margin-bottom: 15px;
+  margin-left:30px;
+  margin-right:50px;
+  padding: 10px;
+  background-color: #c8bfff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #9187ff;
+}
+
+.project-list li a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #3d2892;
+}
+
+.project-list li a:hover {
+  text-decoration: none;
+}
+
+.project-list p {
+  margin: 5px 0 0;
+  font-size: 0.95em;
+  color: #3e3e5c;
 }
