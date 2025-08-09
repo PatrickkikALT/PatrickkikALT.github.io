@@ -58,7 +58,7 @@
             <br> And so, I started testing things out. It took me a while to get something that actually works, as this was my first time actually developing an end product in C. <br> I landed on using Shared Memory for sending the input through, since as far as I know, this has the lowest latency out of all IPC communication methods. 
             Using the previously mentioned segatools, I was able to easily send through whatever I received through the shared memory into the callback provided by the program, which gave me input!
             <br> <br>
-            How does it work? I simply send through a 34-sized byte array, where byte[0] to byte[32] are the touch cells used in the game, which can simply be set to a specific force input that tells the game if its enough to trigger. The air sensors were a bit trickier to figure out, but ended up being quite simple as well.
+            How does it work? I simply send through a 34-sized byte array, where byte[2] to byte[34] are the touch cells used in the game, which can simply be set to a specific force input that tells the game if its enough to trigger. The air sensors were a bit trickier to figure out, but ended up being quite simple as well.
             The game expects the air sensors to be one byte, where 6 out of the 8 bits are actually used. Every physical air sensor has a corresponding bit in the byte, air sensor 1 would be bit 1 etc. 
             <br>
             In Unity, I could simply detect which air sensors were broken using a raycast, and then change the corresponding bit in the byte to 1, then send it through.
