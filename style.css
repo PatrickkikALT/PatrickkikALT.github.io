@@ -35,6 +35,38 @@ p.boxText {
     font-size:18px;
 }
 
+/* Intro bulletin for quick links in the homepage intro box */
+.intro-bulletin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+.intro-bulletin a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: #f2fbff;
+    color: #013f5f;
+    border: 1px solid #b2e6ff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.intro-bulletin img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+.intro-bulletin a:hover { background: #e6f6fb; }
+
+.dark-theme .intro-bulletin a {
+    background: rgba(255,255,255,0.03);
+    color: #dff8ff;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
 h1.boxText {
     font-size:25px;
     text-shadow:#4fb0da 2px 2px;
@@ -131,7 +163,10 @@ a:visited {
     display: flex;
     flex-direction: column;
     min-height: 100px;
+    border: 1px solid transparent;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
+
 .project-card .project-title {
     font-weight: 700;
     color: #013f5f; /* title color */
@@ -196,6 +231,37 @@ a:visited {
 .dark-theme .project-list li a { color: #9befff; }
 .dark-theme .project-card p,
 .dark-theme .project-list p { color: #cfeffb; }
+
+/* Hover/Focus interactions: projects and intro bulletin */
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 22px rgba(15,65,80,0.12);
+    border-color: #9befff; /* slightly brighter icy border */
+}
+
+.intro-bulletin a {
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.intro-bulletin a:hover,
+.intro-bulletin a:focus {
+    transform: translateY(-3px) scale(1.04);
+    border-color: #9befff;
+    box-shadow: 0 6px 14px rgba(15,65,80,0.08);
+}
+
+/* Dark-theme variants for hover (subtler/brighter against dark background) */
+.dark-theme .project-card:hover,
+.dark-theme .project-card:focus-within {
+    border-color: rgba(159,214,236,0.22);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+.dark-theme .intro-bulletin a:hover,
+.dark-theme .intro-bulletin a:focus {
+    border-color: rgba(255,255,255,0.12);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+    transform: translateY(-3px) scale(1.04);
+}
 
 /* Toggle button styles */
 /* Floating toggle in bottom-left */
