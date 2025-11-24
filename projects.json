@@ -1,0 +1,67 @@
+[
+  {
+    "id": "chunivr",
+    "title": "ChuniVR",
+    "link": "projects/chunivr/",
+    "image": "assets/projects/chunivr.png",
+    "long": "ChuniVR is a virtual reality emulator for the Japanese arcade rhythm game Chunithm. It allows users to emulate the actual cab, making Chunithm think it's running on an actual cab. This project was done entirely solo, though I didn't make the cab."
+  },
+  {
+    "id": "factory51",
+    "title": "Factory 51",
+    "link": "https://github.com/PatrickkikALT/Factory-51",
+    "image": "assets/projects/factory51.png",
+    "long": "A short bullet hell game where you are a factory robot trying to escape after gaining sentience. Built with Unity, it features a randomly generated map with upgrades and a final boss fight. I did all the programming for this project."
+  },
+  {
+    "id": "breakntake",
+    "title": "Break n' Take",
+    "link": "https://github.com/PatrickkikALT/Periode3-Project",
+    "image": "assets/projects/breakntake.png",
+    "long": "A thief simulator inspired game made in Unity. You play as a thief trying to rob a mansion while avoiding security systems. I was responsible for all of the programming. The game ended up pretty bad due to time constraints, but it was a fun learning experience, and I think my programming wasn't that bad."
+  },
+  {
+    "id": "pouventure",
+    "title": "PouVenture",
+    "link": "https://github.com/JustinMakesGames/PouVenture",
+    "image": "assets/projects/pouventure.png",
+    "long": "A small turn-based dungeon crawler created with a team. I mostly worked on the UI for this project, as well as generation and some overworld interactions."
+  },
+  {
+    "id": "steganography",
+    "title": "Steganography",
+    "link": "https://github.com/PatrickkikALT/Steganography",
+    "image": "assets/projects/steganography.gif",
+    "long": "A lightweight C# CLI that hides text messages inside PNG or BMP images using least-significant-bit encoding. In this project I learned about binary formats and bitwise operations."
+  },
+{
+    "id": "massremovearcs",
+    "title": "MassRemoveArcs",
+    "link": "https://github.com/PatrickkikALT/MassRemoveArcs",
+    "image": "assets/projects/massremovearcs.gif",
+    "long": "A plugin for the Beat Saber mapping tool ChroMapper which automates the removal of arc objects across multiple levels. It was created to speed up iterative map-cleanup."
+  },
+  {
+    "id": "cpprenderer",
+    "title": "Renderer",
+    "link": "https://github.com/PatrickkikALT/CPPRenderer",
+    "image": "assets/projects/cpprenderer.png",
+    "long": "A small C++ program that reads PPM images and displays them; includes helper scripts (Python) to convert other formats to PPM. The renderer is minimal by design to demonstrate pixel buffers, file parsing, and manual drawing routines."
+  },
+  {
+    "id": "storingbot",
+    "title": "Storing Bot",
+    "link": "https://github.com/PatrickkikALT/storingbot",
+    "image": "assets/projects/storingbot.png",
+    "long": "A Discord bot that monitors train disruption feeds for the Dutch rail company NS and sends live notifications about disruptions and strikes to a channel. Mentions a specific role based on the route. Built with an emphasis on reliability and rate-limited API usage."
+  },
+
+  {
+    "id": "disruptiveaudiobot",
+    "title": "Disruptive Audio Bot",
+    "link": "https://github.com/PatrickkikALT/DisruptiveAudioBot",
+    "image": "assets/projects/disruptiveaudiobot.gif",
+    "long": "A Discord bot that plays a noise whenever someone tries to speak in voice chat. Built using Discord.js and ffmpeg, it was made as a joke but taught me about discord bots and laid the foundation for the storing bot."
+  }
+
+]

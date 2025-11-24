@@ -7,15 +7,15 @@
 
 body {
     font-family: Josefin;
-    background-color: #d196f3;
+    background-color: #d7eef7; /* slightly darker icy blue */
 }
 
 .box {
     width: 50%;
     margin: auto;
-    background: #dccfff;
-    border: 2px solid #a893d8;
-    box-shadow: #c2afee 5px 5px;
+    background: #e6f6fb; /* slightly darker card */
+    border: 2px solid #8ecfe6; /* deeper blue border */
+    box-shadow: #9fd6ec 5px 5px; /* stronger pale blue shadow */
     border-radius: 10px;
 }
 
@@ -37,12 +37,12 @@ p.boxText {
 
 h1.boxText {
     font-size:25px;
-    text-shadow:#a893d8 2px 2px
+    text-shadow:#4fb0da 2px 2px;
 }
-.topnav {
-    background-color: #a893d8;
-    overflow: hidden;
-    box-shadow: #c2afee 5px 5px;
+ .topnav {
+     background-color: #6fb7d8; /* darker icy nav */
+      overflow: hidden;
+     box-shadow: #9fd6ec 5px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,21 +55,21 @@ h1.boxText {
 }
 
 .topnav a {
-    color: #f2f2f2;
+    color: #f8feff;
     padding: 10px 15px;
     text-decoration: none;
     font-size: 17px;
     display: block;
-    filter: drop-shadow(2px 2px 1px #c2afee)
+    filter: drop-shadow(2px 2px 1px #9fd6ec)
 }
 
 .topnav .right a:hover {
-    background-color: #fcd4fa;
-    color: black;
+    background-color: #bfeff6; /* paler cyan hover */
+    color: #001f28;
 }
 
 .box a:hover {
-    background-color:#fcd4fa;
+    background-color:#d4f3fb;
 }
 
 a {
@@ -77,11 +77,11 @@ a {
 }
 
 a:link {
-    color:#6B5593;
+    color:#085a82; /* darker link blue */
 }
 
 a:visited {
-    color:#9576CC;
+    color:#2e93be; /* visited blue */
 }
 
 .project-list {
@@ -91,19 +91,19 @@ a:visited {
 
 .project-list li {
     
-  margin-bottom: 15px;
-  margin-left:30px;
-  margin-right:50px;
-  padding: 10px;
-  background-color: #c8bfff;
-  border-radius: 10px;
-  box-shadow: 1px 1px 3px #9187ff;
+    margin-bottom: 15px;
+    margin-left:30px;
+    margin-right:50px;
+    padding: 10px;
+    background-color: #cfeefb; /* darker project card */
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #6fb9db;
 }
 
 .project-list li a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #3d2892;
+    font-weight: bold;
+    text-decoration: none;
+    color: #013f5f; /* deeper title color */
 }
 
 .project-list li a:hover {
@@ -111,7 +111,123 @@ a:visited {
 }
 
 .project-list p {
-  margin: 5px 0 0;
-  font-size: 0.95em;
-  color: #3e3e5c;
+    margin: 5px 0 0;
+    font-size: 0.95em;
+    color: #243940; /* darker body text for contrast */
 }
+
+/* Projects grid card styles */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.project-card {
+    background-color: #cfeefb; /* match list card */
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #6fb9db;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+}
+.project-card .project-title {
+    font-weight: 700;
+    color: #013f5f; /* title color */
+    font-size: 1.05em;
+    margin-bottom: 8px;
+}
+.project-card .project-title:hover { text-decoration: underline; }
+.project-card p { margin: 0; color: #243940; font-size: 0.95em; flex-grow: 1; }
+
+/* Project card images and long description */
+.project-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.project-short { margin-top: 8px; font-weight:600; color: #085a82; }
+.project-long { margin-top: 8px; font-size: 0.92em; color: #334d52; }
+
+/* Dark theme overrides when `.dark-theme` is applied to <html> */
+.dark-theme body {
+    background-color: #071923; /* dark navy */
+}
+.dark-theme .box {
+    background: #07292f; /* dark card */
+    border: 2px solid #0b5f73;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+.dark-theme h2.boxText {
+    color: #dff8ff;
+}
+.dark-theme h1.boxText {
+    text-shadow: 4px 2px rgb(51, 67, 102);
+}
+.dark-theme p.boxText,
+.dark-theme .boxText {
+    color: #dff8ff; /* ensure main box text becomes readable in dark mode */
+}
+
+.dark-theme .topnav {
+    background-color: #032f3c;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+.dark-theme .topnav a {
+    color: #e6fcff;
+    filter: none;
+}
+.dark-theme .topnav .right a:hover {
+    background-color: rgba(255,255,255,0.04);
+    color: #e6ffff;
+}
+.dark-theme .box a:hover { background-color: rgba(255,255,255,0.03); }
+.dark-theme a:link { color: #6fe6ff; }
+.dark-theme a:visited { color: #4fc9e6; }
+.dark-theme .project-list li,
+.dark-theme .project-card {
+    background-color: #06313d; /* dark project card */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+.dark-theme .project-card .project-title,
+.dark-theme .project-list li a { color: #9befff; }
+.dark-theme .project-card p,
+.dark-theme .project-list p { color: #cfeffb; }
+
+/* Toggle button styles */
+/* Floating toggle in bottom-left */
+#theme-toggle {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 9999;
+    background: rgba(255,255,255,0.95);
+    color: #013f5f;
+    border: 1px solid rgba(1,63,95,0.12);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .15s ease, transform .08s ease;
+}
+#theme-toggle:hover { background: rgba(255,255,255,1); transform: translateY(-1px); }
+
+/* Dark theme variant for the toggle */
+.dark-theme #theme-toggle {
+    background: rgba(255,255,255,0.03);
+    color: #dff8ff;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: none;
+}
+.dark-theme #theme-toggle:hover { background: rgba(255,255,255,0.06); transform: translateY(-1px); }
+
