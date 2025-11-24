@@ -17,40 +17,31 @@ body {
     border: 2px solid #c5eaf5; /* lighter icy border */
     box-shadow: #d6eef6 5px 5px; /* subtle pale icy shadow */
     border-radius: 10px;
-@font-face {
-    font-family: Josefin;
-    src: url(assets/JosefinSans-VariableFont_wght.ttf);
 }
 
-body {
-    font-family: Josefin;
-    background-color: #eff8fb;
-}
-
-.box {
-    width: 50%;
-    margin: auto;
-    background: #f3fafc;
-    border: 2px solid #c5eaf5;
-    box-shadow: #d6eef6 5px 5px;
-    border-radius: 10px;
-}
-
+/* .buttons .box {
+    justify-content:center;
+    align-items:center;
+    display:inline-block;
+    margin-top:5%;
+    width: 10%;
+    margin-left:17%
+} */
 .boxText {
     margin-left:10px;
+    
 }
-
 p.boxText {
     font-size:18px;
 }
 
+/* Intro bulletin for quick links in the homepage intro box */
 .intro-bulletin {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 12px;
 }
-
 .intro-bulletin a {
     display: inline-flex;
     align-items: center;
@@ -63,13 +54,11 @@ p.boxText {
     text-decoration: none;
     font-weight: 600;
 }
-
 .intro-bulletin img {
     width: 22px;
     height: 22px;
     object-fit: contain;
 }
-
 .intro-bulletin a:hover { background: #e6f6fb; }
 
 .dark-theme .intro-bulletin a {
@@ -82,16 +71,15 @@ h1.boxText {
     font-size:25px;
     text-shadow:#4fb0da 2px 2px;
 }
-
-.topnav {
-    background-color: #6fb7d8;
-    overflow: hidden;
-    box-shadow: #9fd6ec 5px 5px;
+ .topnav {
+     background-color: #6fb7d8; /* darker icy nav */
+      overflow: hidden;
+     box-shadow: #9fd6ec 5px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    padding: 0 20px;
+    padding: 0 20px; 
 }
 
 .topnav .left, .topnav .right {
@@ -108,7 +96,7 @@ h1.boxText {
 }
 
 .topnav .right a:hover {
-    background-color: #bfeff6;
+    background-color: #bfeff6; /* paler cyan hover */
     color: #001f28;
 }
 
@@ -121,11 +109,11 @@ a {
 }
 
 a:link {
-    color:#085a82;
+    color:#085a82; /* darker link blue */
 }
 
 a:visited {
-    color:#2e93be;
+    color:#2e93be; /* visited blue */
 }
 
 .project-list {
@@ -134,11 +122,12 @@ a:visited {
 }
 
 .project-list li {
+    
     margin-bottom: 15px;
     margin-left:30px;
     margin-right:50px;
     padding: 10px;
-    background-color: #cfeefb;
+    background-color: #cfeefb; /* darker project card */
     border-radius: 10px;
     box-shadow: 1px 1px 3px #6fb9db;
 }
@@ -146,7 +135,7 @@ a:visited {
 .project-list li a {
     font-weight: bold;
     text-decoration: none;
-    color: #013f5f;
+    color: #013f5f; /* deeper title color */
 }
 
 .project-list li a:hover {
@@ -156,9 +145,10 @@ a:visited {
 .project-list p {
     margin: 5px 0 0;
     font-size: 0.95em;
-    color: #243940;
+    color: #243940; /* darker body text for contrast */
 }
 
+/* Projects grid card styles */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -166,9 +156,8 @@ a:visited {
     padding: 20px;
     margin-top: -30px;
 }
-
 .project-card {
-    background-color: #cfeefb;
+    background-color: #cfeefb; /* match list card */
     padding: 16px;
     border-radius: 10px;
     box-shadow: 1px 1px 3px #6fb9db;
@@ -181,13 +170,14 @@ a:visited {
 
 .project-card .project-title {
     font-weight: 700;
-    color: #013f5f;
+    color: #013f5f; /* title color */
     font-size: 1.05em;
     margin-bottom: 8px;
 }
 .project-card .project-title:hover { text-decoration: underline; }
 .project-card p { margin: 0; color: #243940; font-size: 0.95em; flex-grow: 1; }
 
+/* Project card images and long description */
 .project-card img {
     width: 100%;
     height: 140px;
@@ -198,11 +188,12 @@ a:visited {
 .project-short { margin-top: 8px; font-weight:600; color: #085a82; }
 .project-long { margin-top: 8px; font-size: 0.92em; color: #334d52; }
 
+/* Dark theme overrides when `.dark-theme` is applied to <html> */
 .dark-theme body {
-    background-color: #071923;
+    background-color: #071923; /* dark navy */
 }
 .dark-theme .box {
-    background: #07292f;
+    background: #07292f; /* dark card */
     border: 2px solid #0b5f73;
     box-shadow: 0 4px 8px rgba(0,0,0,0.6);
 }
@@ -214,7 +205,7 @@ a:visited {
 }
 .dark-theme p.boxText,
 .dark-theme .boxText {
-    color: #dff8ff;
+    color: #dff8ff; /* ensure main box text becomes readable in dark mode */
 }
 
 .dark-theme .topnav {
@@ -234,19 +225,22 @@ a:visited {
 .dark-theme a:visited { color: #4fc9e6; }
 .dark-theme .project-list li,
 .dark-theme .project-card {
-    background-color: #06313d;
+    background-color: #06313d; /* dark project card */
     box-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
-.dark-theme .project-card .project-title,
+.dark-theme .project-card .project-title {
+    color: #cbf5ff;
+}
 .dark-theme .project-list li a { color: #9befff; }
 .dark-theme .project-card p,
 .dark-theme .project-list p { color: #cfeffb; }
 
+/* Hover/Focus interactions: projects and intro bulletin */
 .project-card:hover,
 .project-card:focus-within {
     transform: translateY(-6px) scale(1.02);
     box-shadow: 0 10px 22px rgba(15,65,80,0.12);
-    border-color: #9befff;
+    border-color: #9befff; /* slightly brighter icy border */
 }
 
 .intro-bulletin a {
@@ -259,6 +253,7 @@ a:visited {
     box-shadow: 0 6px 14px rgba(15,65,80,0.08);
 }
 
+/* Dark-theme variants for hover (subtler/brighter against dark background) */
 .dark-theme .project-card:hover,
 .dark-theme .project-card:focus-within {
     border-color: rgba(159,214,236,0.22);
@@ -271,23 +266,27 @@ a:visited {
     transform: translateY(-3px) scale(1.04);
 }
 
+/* Toggle button styles */
+/* Toggle removed — dark theme is the only theme now */
+
+/* Print improvements for project cards: request exact color printing and provide a visible border fallback */
 @media print {
     .projects-grid .project-card,
     .project-list li {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         color-adjust: exact !important;
-        background-color: #e0f6ff !important;
-        box-shadow: none !important;
-        border: 1px solid #8ecfff !important;
+        background-color: #e0f6ff !important; /* ensure card color where supported */
+        box-shadow: none !important; /* printers often ignore shadows */
+        border: 1px solid #8ecfff !important; /* fallback if background is omitted */
     }
 
+    /* Force text and link colors to be readable in print */
     .projects-grid .project-card, .project-list li {
         color: #002b36 !important;
     }
 
+    /* Hide decorative UI when printing */
     #theme-toggle, .topnav, button { display: none !important; }
 }
-}
-
 
