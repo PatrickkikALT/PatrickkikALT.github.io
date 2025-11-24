@@ -45,7 +45,7 @@
     "id": "cpprenderer",
     "title": "Renderer",
     "link": "https://github.com/PatrickkikALT/CPPRenderer",
-    "image": "assets/projects/cpprenderer.png",
+    "image": "assets/projects/renderer.gif",
     "long": "A small C++ program that reads PPM images and displays them; includes helper scripts (Python) to convert other formats to PPM. The renderer is minimal by design to demonstrate pixel buffers, file parsing, and manual drawing routines."
   },
   {
