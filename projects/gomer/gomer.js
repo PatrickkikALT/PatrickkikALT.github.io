@@ -1,12 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Load previous data, if it doesnt exist, default to beginning values
     let gomers = JSON.parse(localStorage.getItem('gomer')) ?? 0;
     let gomersPerClick = JSON.parse(localStorage.getItem('gomerPerClick')) ?? 1;
     document.querySelector("#gomeramount").textContent = `${formatNum(gomers)} gomer`
     let gomer = new Audio("gomer.wav");
     let button = document.querySelector("#per-click-upgrade")
     let intervalID;
-    // Add click functionality to gomer
     document.querySelector("#gomer").onclick = function() {
         clickGomer();
     }
