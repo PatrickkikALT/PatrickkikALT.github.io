@@ -231,3 +231,24 @@ a:visited {
 }
 .dark-theme #theme-toggle:hover { background: rgba(255,255,255,0.06); transform: translateY(-1px); }
 
+/* Print improvements for project cards: request exact color printing and provide a visible border fallback */
+@media print {
+    .projects-grid .project-card,
+    .project-list li {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        background-color: #e0f6ff !important; /* ensure card color where supported */
+        box-shadow: none !important; /* printers often ignore shadows */
+        border: 1px solid #8ecfff !important; /* fallback if background is omitted */
+    }
+
+    /* Force text and link colors to be readable in print */
+    .projects-grid .project-card, .project-list li {
+        color: #002b36 !important;
+    }
+
+    /* Hide decorative UI when printing */
+    #theme-toggle, .topnav, button { display: none !important; }
+}
+

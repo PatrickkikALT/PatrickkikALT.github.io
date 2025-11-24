@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Patrick Kikkert</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <div class="topnav">
+        <div class="left">
+            <a href="../">
+                <img class="avatar" width="50px" height="50px" src="../assets/avatar.png">
+            </a>
+        </div>
+        <div class="right">
+            <a href="https://github.com/PatrickkikALT">
+                <img width="40px" height="40px" src="../assets/github.png"/>
+            </a>
+            <a href="https://bsky.app/profile/otherpatrick.bsky.social">
+                <img width="40px" height="40px" src="../assets/bluesky.webp">
+            </a>
+            <a href="https://discordapp.com/users/432556223527911434">
+                <img width="40px" height="40px" src="../assets/discord.png">
+            </a>
+            <a href="mailto:pa.kikkert@gmail.com">
+                <img width="40px" height="40px" src="../assets/email.png">
+            </a>
+        </div>
+    </div>
+    <style>
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto 10px;
+            display: block;
+            border: 4px solid #8ecfe6;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .section-header {
+            margin: 20px 10px 10px 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #8ecfe6;
+            color: #085a82;
+        }
+        .skill-list, .experience-list {
+            list-style: none;
+            padding: 0 10px 0 10px;
+        }
+        .skill-list li, .experience-list li {
+            background-color: #cfeefb;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 1px 1px 3px #6fb9db;
+        }
+        .skill-title, .experience-title {
+            font-weight: bold;
+            color: #013f5f;
+            margin-bottom: 5px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 0 10px;
+        }
+        @media (max-width: 900px) {
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+
+        .skill-card {
+            background-color: #cfeefb;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 1px 1px 3px #6fb9db;
+        }
+        .skill-card .skill-title { margin-bottom: 6px; color: #013f5f; font-weight:700; font-size: 0.98em; }
+        .skill-card p { margin: 0 0 6px 0; color: #243940; font-size: 0.95em; }
+        .dark-theme .contact-info p {
+            color: #dff8ff;
+        }
+        .dark-theme .section-header {
+            color: #9befff;
+            border-bottom: 2px solid #0b5f73;
+        }
+        .dark-theme .skill-list li, .dark-theme .experience-list li {
+            background-color: #06313d;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.6);
+        }
+        .dark-theme .skill-title, .dark-theme .experience-title {
+             color: #9befff;
+        }
+        .dark-theme .skill-list p, .dark-theme .experience-list p {
+            color: #cfeffb;
+        }
+        .dark-theme .skill-card { background-color: #06313d; box-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+        .dark-theme .skill-card .skill-title { color: #9befff; }
+        .dark-theme .skill-card p { color: #cfeffb; }
+        @media print {
+            @page { size: A4 portrait; margin: -10mm; }
+            html, body { background: white !important; color: #000 !important; }
+            .box { width: auto !important; margin: 0 !important; box-shadow: none !important; border: none !important; padding: 12mm !important; }
+            body, .boxText, .skill-card p, .experience-list p { font-size: 12pt !important; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+            .skill-card, .experience-list li { page-break-inside: avoid; break-inside: avoid; }
+            img { max-width: 100% !important; height: auto !important; }
+            #theme-toggle, .topnav, button { display: none !important; }
+        }
+        
+    </style>
+</head>
+<body>
+    <br>
+    <div class="box">
+        <img src="../assets/avatar.png" alt="Profile Picture" class="profile-img">
+        <h1 class="boxText" style="text-align: center; margin-bottom: 0;">Patrick Kikkert</h1>
+        <p class="boxText" style="text-align: center; margin-top: 5px; font-weight: 600;">Programmeur & Creative Developer</p>
+        
+        <div class="contact-info">
+            <p>Tel: <a href="tel:0682798379">06 82798379</a></p>
+            <p>Email: <a href="mailto:pa.kikkert@gmail.com">pa.kikkert@gmail.com</a></p>
+            <p>Adres: De Visserlaan 93, 8072XE Nunspeet</p>
+            <p>Geboortedatum: 17 november 2007</p>
+        </div>
+
+        <h2 class="section-header" id="about">Over mij</h2>
+        <div class="boxText">
+            <p>Mijn naam is Patrick Kikkert. Ik ben een programmeur met veel passie voor het maken van leuke en fijne programma's of games.</p>
+            <p>Ik werk vooral in de backend en vind het belangrijk om dingen zo makkelijk mogelijk te maken voor klant of collega.</p>
+        </div>
+        
+        <h2 class="section-header" id="skills">Vaardigheden</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-title">C#</div>
+                <p>Mijn meest gebruikte programmeertaal, ik gebruik het al meer dan 3 jaar en heb er ook ervaring in buiten Unity.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">C/C++</div>
+                <p>Hele fijne talen om in te werken, maar mijn niveau ligt nog niet heel hoog. Ik wil hier meer van leren en dieper op ingaan.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">Python</div>
+                <p>Gebruik ik vooral voor kleinere, snelle tools. Ik kan het prima gebruiken voor grotere dingen, ook al gaat mijn voorkeur naar andere talen.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">Java</div>
+                <p>Mijn kennis in Java komt voornamelijk door het rondzoeken in de code van Minecraft, waarvoor ik ook mods heb gemaakt. De taal is best dichtbij C#, wat me hielp het snel te begrijpen.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">Unity Editor (Shader Graphs)</div>
+                <p>Ervaring met de Unity Editor, specifiek het maken van verschillende soorten particles en shaders met de ingebouwde Unity Shader Graphs.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">Nederlands</div>
+                <p>Moedertaal (hoog niveau, schrijven niet het beste).</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">Engels</div>
+                <p>Vloeiend, bijna beter dan Nederlands; geleerd door gamen.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">Chinees</div>
+                <p>A1 niveau, behaald met een HSK-certificaat na een keuzedeel op het Deltion College.</p>
+            </div>
+        </div>
+        <br>
+        <h2 class="section-header" id="experience">Werk en Studie ervaring</h2>
+        <ul class="experience-list">
+            <li>
+                <div class="experience-title">Creative Developer MBO-4</div>
+                <p><strong>Instelling:</strong> Deltion College</p>
+                <p>Momenteel bezig met de opleiding. Hier leer ik omgaan met de Unity Editor, Blender en C#.</p>
+            </li>
+            <li>
+                <div class="experience-title">MAVO-tl</div>
+                <p><strong>Instelling:</strong> RSG Wolfsbos locatie Groene Driehoek</p>
+                <p>Opleiding afgerond met alleen maar 7's of hoger in de profielen Techniek en Economie.</p>
+            </li>
+            <li>
+                <div class="experience-title">Hulpkracht</div>
+                <p><strong>Bedrijf:</strong> LIDL</p>
+                <p>Bijbaan waarbij ik vooral kassa werk doe, maar soms ook vakkenvullen. Dit heeft me geholpen met het omgaan met klanten en collega's, en heeft me socialer gemaakt. Ik werk hier om de week 10 uur.</p>
+            </li>
+        </ul>
+
+        <h2 class="section-header" id="hobbies">Hobby's</h2>
+        <div class="boxText">
+            <p>Mijn grootste hobby is gamen, specifiek Rhythm en Arcade Rhythm Games.</p>
+            <p>Daarnaast vind ik astrofotografie heel leuk, en ben ik veel bezig met reverse engineering.</p>
+            <p>Ik vind het heel rustgevend en fijn om te wandelen, vooral bergwandelingen in mooie omgevingen buiten Nederland, zoals Scandinavië of Duitsland.</p>
+        </div>
+        
+    </div>
+
+    <button id="theme-toggle">☀️</button>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        const isDark = localStorage.getItem('dark-theme') === 'true' || 
+                       (localStorage.getItem('dark-theme') === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+        if (isDark) {
+            html.classList.add('dark-theme');
+            toggleButton.textContent = '🌙';
+        } else {
+            html.classList.remove('dark-theme');
+            toggleButton.textContent = '☀️';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            if (html.classList.contains('dark-theme')) {
+                html.classList.remove('dark-theme');
+                localStorage.setItem('dark-theme', 'false');
+                toggleButton.textContent = '☀️';
+            } else {
+                html.classList.add('dark-theme');
+                localStorage.setItem('dark-theme', 'true');
+                toggleButton.textContent = '🌙';
+            }
+        });
+    </script>
+
+</body>
+</html>
