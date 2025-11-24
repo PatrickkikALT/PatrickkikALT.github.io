@@ -204,35 +204,7 @@
         
     </div>
 
-    <button id="theme-toggle">☀️</button>
-
-    <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-
-        const isDark = localStorage.getItem('dark-theme') === 'true' || 
-                       (localStorage.getItem('dark-theme') === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-        if (isDark) {
-            html.classList.add('dark-theme');
-            toggleButton.textContent = '🌙';
-        } else {
-            html.classList.remove('dark-theme');
-            toggleButton.textContent = '☀️';
-        }
-
-        toggleButton.addEventListener('click', () => {
-            if (html.classList.contains('dark-theme')) {
-                html.classList.remove('dark-theme');
-                localStorage.setItem('dark-theme', 'false');
-                toggleButton.textContent = '☀️';
-            } else {
-                html.classList.add('dark-theme');
-                localStorage.setItem('dark-theme', 'true');
-                toggleButton.textContent = '🌙';
-            }
-        });
-    </script>
+    <script src="../darkmode.js"></script>
 
 </body>
 </html>

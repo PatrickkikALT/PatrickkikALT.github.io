@@ -7,15 +7,15 @@
 
 body {
     font-family: Josefin;
-    background-color: #d7eef7; /* slightly darker icy blue */
+    background-color: #eff8fb; /* cooler, more icy */
 }
 
 .box {
     width: 50%;
     margin: auto;
-    background: #e6f6fb; /* slightly darker card */
-    border: 2px solid #8ecfe6; /* deeper blue border */
-    box-shadow: #9fd6ec 5px 5px; /* stronger pale blue shadow */
+    background: #f3fafc; /* cooler, more icy card */
+    border: 2px solid #c5eaf5; /* lighter icy border */
+    box-shadow: #d6eef6 5px 5px; /* subtle pale icy shadow */
     border-radius: 10px;
 }
 
@@ -154,6 +154,7 @@ a:visited {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
     padding: 20px;
+    margin-top: -30px;
 }
 .project-card {
     background-color: #cfeefb; /* match list card */
@@ -227,7 +228,9 @@ a:visited {
     background-color: #06313d; /* dark project card */
     box-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
-.dark-theme .project-card .project-title,
+.dark-theme .project-card .project-title {
+    color: #cbf5ff;
+}
 .dark-theme .project-list li a { color: #9befff; }
 .dark-theme .project-card p,
 .dark-theme .project-list p { color: #cfeffb; }
@@ -264,38 +267,7 @@ a:visited {
 }
 
 /* Toggle button styles */
-/* Floating toggle in bottom-left */
-#theme-toggle {
-    position: fixed;
-    left: 16px;
-    bottom: 16px;
-    z-index: 9999;
-    background: rgba(255,255,255,0.95);
-    color: #013f5f;
-    border: 1px solid rgba(1,63,95,0.12);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    border-radius: 10px;
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    transition: background .15s ease, transform .08s ease;
-}
-#theme-toggle:hover { background: rgba(255,255,255,1); transform: translateY(-1px); }
-
-/* Dark theme variant for the toggle */
-.dark-theme #theme-toggle {
-    background: rgba(255,255,255,0.03);
-    color: #dff8ff;
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: none;
-}
-.dark-theme #theme-toggle:hover { background: rgba(255,255,255,0.06); transform: translateY(-1px); }
+/* Toggle removed — dark theme is the only theme now */
 
 /* Print improvements for project cards: request exact color printing and provide a visible border fallback */
 @media print {
