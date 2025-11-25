@@ -274,3 +274,32 @@ a:visited {
     #theme-toggle, .topnav, button { display: none !important; }
 }
 
+/* Language toggle styles */
+#lang-toggle {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    margin-right: 10px;
+}
+#lang-toggle button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #f8feff;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: background 0.12s ease, color 0.12s ease, transform 0.08s ease;
+}
+#lang-toggle button:hover { transform: translateY(-2px); }
+#lang-toggle button:focus { outline: none; box-shadow: 0 0 0 3px rgba(159,214,236,0.16); }
+#lang-toggle button[aria-pressed="true"] { font-weight: 700; }
+
+/* Default language visibility: show Dutch, hide English until switched */
+[data-lang] { display: none; }
+[data-lang="nl"] { display: inline; }
+
+.dark-theme #lang-toggle button { font: Josefin; color: #e6fcff; border-color: rgba(255,255,255,0.06); }
+.dark-theme #lang-toggle button:hover { background: rgba(255,255,255,0.04); }
+
+
