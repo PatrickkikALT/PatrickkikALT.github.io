@@ -164,6 +164,7 @@ a:visited {
     color: #013f5f;
     font-size: 1.05em;
     margin-bottom: 8px;
+    margin-top:12px;
 }
 .project-card .project-title:hover { text-decoration: underline; }
 .project-card p { margin: 0; color: #243940; font-size: 0.95em; flex-grow: 1; }
