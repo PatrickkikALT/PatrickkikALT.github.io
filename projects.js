@@ -5,11 +5,10 @@
   function makeCard(p) {
     const card = document.createElement('div');
     card.className = 'project-card';
-    card.style.cursor = 'pointer';
 
-    if (p.image) {
+    if (p.thumbnail) {
       const img = document.createElement('img');
-      img.src = p.image;
+      img.src = p.thumbnail;
       img.alt = p.title + ' image';
       img.loading = 'lazy';
       card.appendChild(img);
@@ -18,25 +17,18 @@
     const a = document.createElement('a');
     a.className = 'project-title';
     a.textContent = p.title;
-    a.href = p.link || '#';
-    if (p.link && p.link.startsWith('http')) a.target = '_blank';
+    a.href = 'projects?id=' + encodeURIComponent(p.id);
     card.appendChild(a);
 
-    if (p.long) {
-      const long = document.createElement('p');
-      long.className = 'project-long';
-      long.textContent = p.long;
-      card.appendChild(long);
+    if (p.description) {
+      const desc = document.createElement('p');
+      desc.className = 'project-long';
+      desc.textContent = p.description;
+      card.appendChild(desc);
     }
 
-    card.addEventListener('click', (e) => {
-      if (e.target.tagName !== 'A') {
-        if (p.link && p.link.startsWith('http')) {
-          window.open(p.link, '_blank');
-        } else if (p.link) {
-          window.location.href = p.link;
-        }
-      }
+    card.addEventListener('click', function() {
+      window.location.href = 'projects?id=' + encodeURIComponent(p.id);
     });
 
     return card;
@@ -57,3 +49,4 @@
     });
 
 })();
+

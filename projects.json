@@ -1,88 +1,217 @@
 [
   {
+    "thumbnail": "assets/projects/chunivr.png",
     "id": "chunivr",
     "title": "ChuniVR",
-    "link": "projects/chunivr/",
-    "image": "assets/projects/chunivr.png",
-    "long": "ChuniVR is a virtual reality emulator for the Japanese arcade rhythm game Chunithm. It allows users to emulate the actual cab, making Chunithm think it's running on an actual cab. This project was done entirely solo, though I didn't make the cab."
+    "description": "VR emulator for the Japanese arcade rhythm game Chunithm.",
+    "githublink": "https://github.com/PatrickkikALT/ChuniVR",
+    "information": [
+      "ChuniVR is a VR emulator I developed during school for the arcade game Chunithm. While I did this as a school project, I only did so because I could then focus all of my attention on to it, and I would've done it outside of school anyway.",
+      "To understand this project, you will first need to understand Chunithm as a game. Chunithm is a japanese arcade rhythm game developed by SEGA. While it's not as popular here in Europe and the USA, it's really popular in most parts of Asia. ",
+      "Unfortunately, this means it's quite hard to play outside of Asia. There are currently only 5 cabs in my entire country, and only 26 in Europe, and none of them are official. While you can buy a controller to replicate it, these are expensive, and usually will cost you up to 500 euros, due to expensive shipping costs and import from Asia. ",
+      "With this in mind, I came up with the idea because of similar projects happening for other arcade games, being WACCA and maimai, and their respective projects (WacVR and MaiDXR)",
+      "Before even starting the development, I started researching how I would do it, and stumbled upon a project called segatools, which allowed me to easily get my own dlls working inside most SEGA/SEGA-related arcade games. ",
+      "And so, I started testing things out. It took me a while to get something that actually works, as this was my first time actually developing an end product in C. I landed on using Shared Memory for sending the input through, since as far as I know, this has the lowest latency out of all IPC communication methods. ",
+      "Using the previously mentioned segatools, I was able to easily send through whatever I received through the shared memory into the callback provided by the program, which gave me input! How does it work? I simply send through a 34-sized byte array, where byte[2] to byte[34] are the touch cells used in the game, which can be set to a specific force input that tells the game if its enough to trigger. ",
+      "The air sensors were a bit trickier to figure out, but ended up being quite simple as well. The game expects the air sensors to be one byte, where 6 out of the 8 bits are actually used. Every physical air sensor has a corresponding bit in the byte, air sensor 1 would be bit 1 etc. In Unity, I could simply detect which air sensors were broken using a raycast, and then change the corresponding bit in the byte to 1, then send it through. ",
+      "Now, the worst part of all, the LEDs. These were a pain. I haven't even fully implemented them yet at the time of writing, as these were a pain to get working in the first place, and I don't want to mess it up. The way it works right now is by connecting to a pipe that segatools creates for me, but the format of these LEDs is god awful. For the slider, the pipe sends a byte[3][31] array, formatted in a right to left order in a BRG format and it alternates between the actual keys and the dividers in between. ",
+      "This means I had to actually copy the LED colors from the cells above, instead of each having their own. Worst of all, it still doesn't work correctly, I think it's supposed to become a gradient between the previous LED state as well.",
+      "The main part was obviously the actual VR environment. I decided to go for a simple box with just the cab and a few decorations. Because I kind of suck at 3D art, and graphics design isn't my passion, I used a Chunithm Cab graciously provided by Raymond. The Unity setup was straightforward — I just needed to collide with the VR controller and send corresponding input through shared memory. The hardest part was making it feel good to play, as the game is scuffed without full finger control. I also experimented with hand tracking, but there's simply too much latency for it to be practical. I'll still be maintaining this project and trying to improve it!"
+    ],
+    "languages": ["C", "C#", "Unity"],
+    "features": [
+      "VR arcade cabinet emulation",
+      "Touch input via shared memory",
+      "Air sensor detection",
+      "LED support"
+    ],
+    "images": ["assets/projects/chunivr.png"]
   },
   {
+    "thumbnail": "assets/projects/factory51.png",
     "id": "factory51",
     "title": "Factory 51",
-    "link": "https://github.com/PatrickkikALT/Factory-51",
-    "image": "assets/projects/factory51.png",
-    "long": "A short bullet hell game where you are a factory robot trying to escape after gaining sentience. Built with Unity, it features a randomly generated map with upgrades and a final boss fight. I did all the programming for this project."
+    "description": "Bullet hell game where a factory robot tries to escape after gaining sentience.",
+    "githublink": "https://github.com/PatrickkikALT/Factory-51",
+    "information": [
+      "A short bullet hell game where you play as a factory robot trying to escape after gaining sentience and stealing a super weapon. Built with Unity, it features a randomly generated map with upgrades and a final boss fight. I did all the programming for this project."
+    ],
+    "languages": ["C#", "Unity"],
+    "features": [
+      "Randomly generated maps",
+      "Upgrades system",
+      "Boss fight",
+      "Wave-based enemies"
+    ],
+    "images": ["assets/projects/factory51.png"]
   },
   {
+    "thumbnail": "assets/projects/breakntake.png",
     "id": "breakntake",
     "title": "Break n' Take",
-    "link": "https://github.com/PatrickkikALT/Periode3-Project",
-    "image": "assets/projects/breakntake.png",
-    "long": "A thief simulator inspired game made in Unity. You play as a thief trying to rob a mansion while avoiding security systems. I was responsible for all of the programming. The game ended up pretty bad due to time constraints, but it was a fun learning experience, and I think my programming wasn't that bad."
+    "description": "Thief simulator game where you rob a mansion while avoiding security systems.",
+    "githublink": "https://github.com/PatrickkikALT/Periode3-Project",
+    "information": [
+      "A thief simulator inspired game made in Unity where you play as a thief trying to rob a mansion while avoiding security systems. I was responsible for all of the programming. The game ended up pretty bad due to time constraints, but it was a fun learning experience and I think my programming wasn't that bad. The main gameplay involves trying to steal valuables while avoiding the cameras and making sure you don't make too much noise to avoid the sound sensors."
+    ],
+    "languages": ["C#", "Unity"],
+    "features": [
+      "Multiple maps",
+      "Stealth"
+    ],
+    "images": ["assets/projects/breakntake.png"]
   },
   {
+    "thumbnail": "assets/projects/pouventure.png",
     "id": "pouventure",
     "title": "PouVenture",
-    "link": "https://github.com/JustinMakesGames/PouVenture",
-    "image": "assets/projects/pouventure.png",
-    "long": "A small turn-based dungeon crawler created with a team. I mostly worked on the UI for this project, as well as generation and some overworld interactions."
+    "description": "Turn-based dungeon crawler.",
+    "githublink": "https://github.com/JustinMakesGames/PouVenture",
+    "information": [
+      "A small turn-based dungeon crawler created with a team where I mostly worked on the UI, procedural generation, and overworld interactions. The game has turn based combat with different weapons, and random dungeons to explore. It also has a saloon where you can talk to some NPCs and gamble your money away."
+    ],
+    "languages": ["C#", "Unity"],
+    "features": [
+      "Turn-based combat",
+      "Procedural dungeons",
+      "Multiple weapons"
+    ],
+    "images": ["assets/projects/pouventure.png"]
   },
   {
+    "thumbnail": "assets/projects/pestpatrol.png",
     "id": "pestpatrol",
     "title": "Pest Patrol",
-    "link": "https://github.com/SedKety/Pest-Control",
-    "image": "assets/projects/pestpatrol.png",
-    "long": "A tower defense game where you play as a pest control agent, defending from waves of pests like rats and pigeons. I mostly did the UI/UX but I also did some programming."
+    "description": "Tower defense game where you defend against waves of pests.",
+    "githublink": "https://github.com/SedKety/Pest-Control",
+    "information": [
+      "A tower defense game where you play as a pest control agent defending from waves of pests like rats and pigeons. I mostly did the UI/UX but I also did some programming. The game has multiple towers which each are good for different enemies."
+    ],
+    "languages": ["C#", "Unity"],
+    "features": [
+      "Wave-based gameplay",
+      "Multiple enemy types",
+      "Tower placement strategy"
+    ],
+    "images": ["assets/projects/pestpatrol.png"]
   },
   {
+    "thumbnail": "assets/projects/bubblegame.png",
     "id": "bubblegame",
     "title": "Bubble Game",
-    "link": "https://github.com/FirePixel8422/Bubble-Game",
-    "image": "assets/projects/bubblegame.png",
-    "long": "A simple multiplayer bubble FPS game made in Unity for a game jam, I worked on the player movement and weapons for this project."
+    "description": "Multiplayer bubble FPS game made for a game jam.",
+    "githublink": "https://github.com/FirePixel8422/Bubble-Game",
+    "information": [
+      "A simple multiplayer bubble FPS game made in Unity for a game jam, where I worked on the player movement and weapons. This game taught us a lot about working with a short amount of time."
+    ],
+    "languages": ["C#", "Unity"],
+    "features": [
+      "Multiplayer gameplay",
+      "FPS mechanics",
+      "Bubbles!"
+    ],
+    "images": ["assets/projects/bubblegame.png"]
   },
   {
+    "thumbnail": "assets/projects/steganography.gif",
     "id": "steganography",
     "title": "Steganography",
-    "link": "https://github.com/PatrickkikALT/Steganography",
-    "image": "assets/projects/steganography.gif",
-    "long": "A lightweight C# CLI that hides text messages inside PNG or BMP images using least-significant-bit encoding. In this project I learned about binary formats and bitwise operations."
+    "description": "CLI tool that hides text messages inside PNG or BMP images using LSB encoding.",
+    "githublink": "https://github.com/PatrickkikALT/Steganography",
+    "information": [
+      "A lightweight C# CLI that hides text messages inside images using least-significant-bit encoding to conceal data within image pixels. The CLI provides simple commands for encoding and decoding hidden messages. In this project I learned about binary formats and bitwise operations."
+    ],
+    "languages": ["C#"],
+    "features": [
+      "Data hiding in images",
+      "Command-line interface"
+    ],
+    "images": ["assets/projects/steganography.gif"]
   },
-{
+  {
+    "thumbnail": "assets/projects/massremovearcs.gif",
     "id": "massremovearcs",
     "title": "MassRemoveArcs",
-    "link": "https://github.com/PatrickkikALT/MassRemoveArcs",
-    "image": "assets/projects/massremovearcs.gif",
-    "long": "A plugin for the Beat Saber mapping tool ChroMapper which automates the removal of arc objects across multiple levels. It was created to speed up iterative map-cleanup."
+    "description": "Plugin for ChroMapper that automates removal of arc objects across multiple levels.",
+    "githublink": "https://github.com/PatrickkikALT/MassRemoveArcs",
+    "information": [
+      "A plugin for the Beat Saber mapping tool ChroMapper that automates the removal of arc objects across multiple levels. It was created to speed up accidental arc placements, saving time when creating Beat Saber maps. It works directly with ChroMapper's built-in plugin system.."
+    ],
+    "languages": ["C#"],
+    "features": [
+      "Batch arc removal",
+      "ChroMapper integration"
+    ],
+    "images": ["assets/projects/massremovearcs.gif"]
   },
   {
+    "thumbnail": "assets/projects/raylibminecraft.png",
     "id": "raylibminecraft",
     "title": "Raylib Minecraft",
-    "link": "https://github.com/PatrickkikALT/raylib",
-    "image": "assets/projects/raylibminecraft.png",
-    "long": "A simple Minecraft clone built using the raylib C++ library. It features a basic world generation, block removal and some optimization. This project was done solo to learn more C++."
+    "description": "Minecraft clone built using the raylib C++ library.",
+    "githublink": "https://github.com/PatrickkikALT/raylib",
+    "information": [
+      "A simple Minecraft clone built using the raylib C++ library that features a basic world generation system where players can remove blocks. This project was done solo to learn more C++."
+    ],
+    "languages": ["C++", "Raylib"],
+    "features": [
+      "World generation",
+      "Block removal"
+    ],
+    "images": ["assets/projects/raylibminecraft.png"]
   },
   {
+    "thumbnail": "assets/projects/renderer.gif",
     "id": "cpprenderer",
     "title": "Renderer",
-    "link": "https://github.com/PatrickkikALT/CPPRenderer",
-    "image": "assets/projects/renderer.gif",
-    "long": "A small C++ program that reads PPM images and displays them; includes helper scripts (Python) to convert other formats to PPM. The renderer is minimal by design to demonstrate pixel buffers, file parsing, and manual drawing routines."
+    "description": "C++ program that reads and displays PPM images with conversion utilities.",
+    "githublink": "https://github.com/PatrickkikALT/CPPRenderer",
+    "information": [
+      "A small C++ program that reads PPM images and displays them, with helper scripts written in Python to convert other formats to PPM. The renderer is minimal by design but allows you to draw on the image after loading. This project was used to learn more about the Windows API and C++ in general."
+    ],
+    "languages": ["C++", "Python"],
+    "features": [
+      "PPM file reading",
+      "Image display",
+      "Format conversion",
+      "Drawing on the image"
+    ],
+    "images": ["assets/projects/renderer.gif"]
   },
   {
+    "thumbnail": "assets/projects/storingbot.png",
     "id": "storingbot",
     "title": "Storing Bot",
-    "link": "https://github.com/PatrickkikALT/storingbot",
-    "image": "assets/projects/storingbot.png",
-    "long": "A Discord bot that monitors train disruption feeds for the Dutch rail company NS and sends live notifications about disruptions and strikes to a channel. Mentions a specific role based on the route. Built with an emphasis on reliability and rate-limited API usage."
+    "description": "Discord bot that monitors Dutch rail disruptions and sends live notifications.",
+    "githublink": "https://github.com/PatrickkikALT/storingbot",
+    "information": [
+      "A Discord bot that monitors train disruption feeds for the NS and sends live notifications about disruptions and strikes to a Discord channel with mentions for specific roles based on the affected route. Built to learn more about using APIs and creating Discord bots."
+    ],
+    "languages": ["JavaScript", "Node.js"],
+    "features": [
+      "Real-time disruption monitoring",
+      "Discord notifications",
+      "Role mentions"
+    ],
+    "images": ["assets/projects/storingbot.png"]
   },
 
   {
+    "thumbnail": "assets/projects/disruptiveaudiobot.gif",
     "id": "disruptiveaudiobot",
     "title": "Disruptive Audio Bot",
-    "link": "https://github.com/PatrickkikALT/DisruptiveAudioBot",
-    "image": "assets/projects/disruptiveaudiobot.gif",
-    "long": "A Discord bot that plays a noise whenever someone tries to speak in voice chat. Built using Discord.js and ffmpeg, it was made as a joke but taught me about discord bots and laid the foundation for the storing bot."
+    "description": "Discord bot that plays noise when users speak in voice chat.",
+    "githublink": "https://github.com/PatrickkikALT/DisruptiveAudioBot",
+    "information": [
+      "A Discord bot that plays a noise whenever someone tries to speak in voice chat, built using Discord.js and ffmpeg, it was made as a joke but taught me about discord bots and laid the foundation for the Storing Bot."
+    ],
+    "languages": ["JavaScript", "Node.js"],
+    "features": [
+      "Voice channel detection",
+      "Audio playback",
+      "Discord.js integration",
+      "ffmpeg processing"
+    ],
+    "images": ["assets/projects/disruptiveaudiobot.gif"]
   }
-
 ]

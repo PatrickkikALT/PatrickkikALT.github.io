@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Project</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="topnav">
+    <div class="left">
+      <a href="../">
+        <img class="avatar" width="50" height="50" src="../assets/avatar.png">
+      </a>
+    </div>
+    <div class="right">
+      <a href="../">
+        <img width="45" height="45" src="../assets/projects.png">
+      </a>
+      <a href="https://github.com/PatrickkikALT">
+        <img width="40" height="40" src="../assets/github.png">
+      </a>
+      <a href="https://bsky.app/profile/otherpatrick.bsky.social">
+        <img width="40" height="40" src="../assets/bluesky.webp">
+      </a>
+      <a href="https://discordapp.com/users/432556223527911434">
+        <img width="40" height="40" src="../assets/discord.png">
+      </a>
+      <a href="mailto:pa.kikkert@gmail.com">
+        <img width="40" height="40" src="../assets/email.png">
+      </a>
+    </div>
+  </div>
+
+  <br>
+  <main class="box" style="max-width:900px;margin:auto;">
+    <h1 class="boxText" id="title">Loading…</h1>
+    <div id="meta" style="margin-left:10px"></div>
+    <div id="content" style="margin:16px"></div>
+    <p style="margin-left:10px"><a href="../">← Back to Home</a></p>
+  </main>
+
+  <script src="../darkmode.js"></script>
+  <script>
+  (function(){
+    function getQueryParam(key) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(key);
+    }
+
+    const id = getQueryParam('id');
+    if (!id) {
+      document.getElementById('title').textContent = 'Project not specified';
+      return;
+    }
+
+    function render(p){
+      document.getElementById('title').textContent = p.title || 'Untitled';
+      const meta = document.getElementById('meta');
+      meta.innerHTML = '';
+      
+      if (p.thumbnail) {
+        const img = document.createElement('img');
+        img.src = '../' + p.thumbnail.replace(/^\/?/, '');
+        img.alt = (p.title || 'Project') + ' image';
+        img.style.maxWidth = '680px';
+        img.style.display = 'block';
+        img.style.margin = '8px 10px';
+        meta.appendChild(img);
+      }
+      
+      if (p.githublink) {
+        const link = document.createElement('p');
+        link.innerHTML = '<a href="'+p.githublink+'" target="_blank" rel="noopener">'+p.githublink+'</a>';
+        link.style.marginLeft = '10px';
+        meta.appendChild(link);
+      }
+      
+      if (p.languages && p.languages.length) {
+        const langP = document.createElement('p');
+        langP.style.marginLeft = '10px';
+        langP.innerHTML = '<strong>Languages:</strong> ' + p.languages.join(', ');
+        meta.appendChild(langP);
+      }
+      
+      
+      const content = document.getElementById('content');
+      content.innerHTML = '';
+      
+      if (p.information && Array.isArray(p.information)) {
+        p.information.forEach(line => {
+          const para = document.createElement('p');
+          para.className = 'boxText';
+          para.textContent = line;
+          content.appendChild(para);
+        });
+      }
+      
+      if (p.features && p.features.length) {
+        const featureHead = document.createElement('h3');
+        featureHead.className = 'boxText';
+        featureHead.textContent = 'Features';
+        content.appendChild(featureHead);
+        const featureList = document.createElement('ul');
+        featureList.style.marginTop = '-15px';
+        p.features.forEach(feature => {
+          const li = document.createElement('li');
+          li.className = 'boxText';
+          li.textContent = feature;
+          featureList.appendChild(li);
+        });
+        content.appendChild(featureList);
+      }
+    }
+
+    fetch('../projects.json')
+      .then(r => r.ok ? r.json() : Promise.reject('failed'))
+      .then(list => {
+        const p = list.find(x=>x.id === id);
+        if (p) render(p);
+        else document.getElementById('title').textContent = 'Project not found';
+      }).catch(()=>{ document.getElementById('title').textContent = 'Error loading project'; });
+  })();
+  </script>
+</body>
+</html>
