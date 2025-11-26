@@ -209,7 +209,7 @@
 
     <script>
         (function(){
-            const getPref = () => localStorage.getItem('site-lang') || 'nl';
+            const getPref = () => localStorage.getItem('site-lang') || 'en';
             const inlineTags = new Set(['SPAN','A','IMG','STRONG','EM','B','I','SMALL']);
             const setLang = (lang) => {
                 localStorage.setItem('site-lang', lang);
