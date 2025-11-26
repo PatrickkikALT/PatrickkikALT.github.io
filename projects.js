@@ -5,6 +5,7 @@
   function makeCard(p) {
     const card = document.createElement('div');
     card.className = 'project-card';
+    card.style.cursor = 'pointer';
 
     if (p.image) {
       const img = document.createElement('img');
@@ -27,6 +28,16 @@
       long.textContent = p.long;
       card.appendChild(long);
     }
+
+    card.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'A') {
+        if (p.link && p.link.startsWith('http')) {
+          window.open(p.link, '_blank');
+        } else if (p.link) {
+          window.location.href = p.link;
+        }
+      }
+    });
 
     return card;
   }
