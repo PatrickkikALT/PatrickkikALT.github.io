@@ -223,19 +223,16 @@
                         el.style.display = 'none';
                     }
                 });
-                // update aria-pressed on buttons for accessibility
                 document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
                 document.getElementById('btn-nl').setAttribute('aria-pressed', String(lang === 'nl'));
             };
             document.addEventListener('DOMContentLoaded', () => {
-                // wire buttons
                 const enBtn = document.getElementById('btn-en');
                 const nlBtn = document.getElementById('btn-nl');
                 if (enBtn && nlBtn) {
                     enBtn.addEventListener('click', () => setLang('en'));
                     nlBtn.addEventListener('click', () => setLang('nl'));
                 }
-                // initialize
                 setLang(getPref());
             });
         })();

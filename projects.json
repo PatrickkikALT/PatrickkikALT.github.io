@@ -28,6 +28,20 @@
     "long": "A small turn-based dungeon crawler created with a team. I mostly worked on the UI for this project, as well as generation and some overworld interactions."
   },
   {
+    "id": "pestpatrol",
+    "title": "Pest Patrol",
+    "link": "https://github.com/SedKety/Pest-Control",
+    "image": "assets/projects/pestpatrol.png",
+    "long": "A tower defense game where you play as a pest control agent, defending from waves of pests like rats and pigeons. I mostly did the UI/UX but I also did some programming."
+  },
+  {
+    "id": "bubblegame",
+    "title": "Bubble Game",
+    "link": "https://github.com/FirePixel8422/Bubble-Game",
+    "image": "assets/projects/bubblegame.png",
+    "long": "A simple multiplayer bubble FPS game made in Unity for a game jam, I worked on the player movement and weapons for this project."
+  },
+  {
     "id": "steganography",
     "title": "Steganography",
     "link": "https://github.com/PatrickkikALT/Steganography",
@@ -40,6 +54,13 @@
     "link": "https://github.com/PatrickkikALT/MassRemoveArcs",
     "image": "assets/projects/massremovearcs.gif",
     "long": "A plugin for the Beat Saber mapping tool ChroMapper which automates the removal of arc objects across multiple levels. It was created to speed up iterative map-cleanup."
+  },
+  {
+    "id": "raylibminecraft",
+    "title": "Raylib Minecraft",
+    "link": "https://github.com/PatrickkikALT/raylib",
+    "image": "assets/projects/raylibminecraft.png",
+    "long": "A simple Minecraft clone built using the raylib C++ library. It features a basic world generation, block removal and some optimization. This project was done solo to learn more C++."
   },
   {
     "id": "cpprenderer",
