@@ -1,4 +1,4 @@
-
+*, *::before, *::after { box-sizing: border-box; }
 
 @font-face {
     font-family: Josefin;
@@ -11,12 +11,14 @@ body {
 }
 
 .box {
-    width: 50%;
+    width: 90%;
+    max-width: 1100px;
     margin: auto;
     background: #f3fafc;
     border: 2px solid #c5eaf5;
     box-shadow: #d6eef6 5px 5px;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 
@@ -114,14 +116,13 @@ a:visited {
 }
 
 .project-list li {
-    
-    margin-bottom: 15px;
-    margin-left:30px;
-    margin-right:50px;
+    margin: 0 0 15px 0;
     padding: 10px;
     background-color: #cfeefb;
     border-radius: 10px;
     box-shadow: 1px 1px 3px #6fb9db;
+    overflow: hidden;
+    word-break: break-word;
 }
 
 .project-list li a {
@@ -142,7 +143,7 @@ a:visited {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
     margin-top: -30px;
@@ -157,6 +158,8 @@ a:visited {
     min-height: 100px;
     border: 1px solid transparent;
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .project-card .project-title {
@@ -165,13 +168,15 @@ a:visited {
     font-size: 1.05em;
     margin-bottom: 8px;
     margin-top:12px;
+    word-break: break-word;
 }
 .project-card .project-title:hover { text-decoration: underline; }
-.project-card p { margin: 0; color: #243940; font-size: 0.95em; flex-grow: 1; }
+.project-card p { margin: 0; color: #243940; font-size: 0.95em; flex-grow: 1; word-break: break-word; }
 
 .project-card img {
     width: 100%;
-    height: 140px;
+    height: auto;
+    max-height: 180px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -275,7 +280,12 @@ a:visited {
     #theme-toggle, .topnav, button { display: none !important; }
 }
 
-/* Language toggle styles */
+@media (max-width: 540px) {
+    .projects-grid { grid-template-columns: 1fr; gap: 12px; padding: 12px; }
+    .box { width: 95%; }
+}
+
+
 #lang-toggle {
     display: inline-flex;
     gap: 6px;
@@ -296,7 +306,6 @@ a:visited {
 #lang-toggle button:focus { outline: none; box-shadow: 0 0 0 3px rgba(159,214,236,0.16); }
 #lang-toggle button[aria-pressed="true"] { font-weight: 700; }
 
-/* Default language visibility: show Dutch, hide English until switched */
 [data-lang] { display: none; }
 [data-lang="nl"] { display: inline; }
 
