@@ -31,7 +31,7 @@
   <br>
   <main class="box" style="max-width:900px;margin:auto;">
     <h1 class="boxText" id="title">Loading…</h1>
-    <div id="meta" style="margin-left:10px"></div>
+    <div id="meta" style="margin:16px"></div>
     <div id="content" style="margin:16px"></div>
     <p style="margin-left:10px"><a href="../">← Back to Home</a></p>
   </main>
@@ -59,9 +59,10 @@
         const img = document.createElement('img');
         img.src = '../' + p.thumbnail.replace(/^\/?/, '');
         img.alt = (p.title || 'Project') + ' image';
-        img.style.maxWidth = '680px';
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
         img.style.display = 'block';
-        img.style.margin = '8px 10px';
+        img.style.margin = '8px 0';
         meta.appendChild(img);
       }
       

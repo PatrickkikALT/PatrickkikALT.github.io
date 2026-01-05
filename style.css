@@ -312,3 +312,12 @@ a:visited {
 .dark-theme #lang-toggle button { font: Josefin; color: #e6fcff; border-color: rgba(255,255,255,0.06); }
 .dark-theme #lang-toggle button:hover { background: rgba(255,255,255,0.04); }
 
+/* Responsive images inside content/box/project pages */
+.box img,
+.box #meta img,
+.box .project-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
