@@ -96,6 +96,26 @@
     "images": ["assets/projects/pestpatrol.png"]
   },
   {
+    "thumbnail": "assets/projects/crazywarzoo3d.png",
+    "id": "crazywarzoo3d",
+    "title": "Crazy War Zoo 3D",
+    "description": "3D multiplayer battle royale game with animals.",
+    "githublink": "https://github.com/PatrickkikALT/Insane-Cow-3D",
+    "information": [
+      "A 3D multiplayer battle royale game made in Unity where players control animals and fight",
+      "The game features multiple animals, and multiplayer lobbies. I worked on all the programming for this game.",
+      "This game was made for Global Game Jam 2026.",
+      "https://otherpatrick.itch.io/crazy-war-zoo-3d"
+    ],
+    "languages": ["C#", "Unity"],
+    "features": [
+      "Multiplayer battle royale",
+      "Multiple animal characters",
+      "3D environments"
+    ],
+    "images": ["assets/projects/crazywarzoo3d.png"]
+  },
+  {
     "thumbnail": "assets/projects/bubblegame.png",
     "id": "bubblegame",
     "title": "Bubble Game",
