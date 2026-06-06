@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowLeft,
@@ -325,6 +325,39 @@ function ProjectDetail({ projects, id }) {
     setImageZoom(1);
   }, [id]);
 
+  const activeImage = galleryImages[selectedImage];
+  const showGalleryControls = galleryImages.length > 1;
+  const changeImage = useCallback((direction) => {
+    if (!galleryImages.length) return;
+    setSelectedImage((current) => (current + direction + galleryImages.length) % galleryImages.length);
+    setImageZoom(1);
+  }, [galleryImages.length]);
+
+  useEffect(() => {
+    if (!lightboxOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setLightboxOpen(false);
+      } else if (event.key === 'ArrowLeft' && showGalleryControls) {
+        event.preventDefault();
+        changeImage(-1);
+      } else if (event.key === 'ArrowRight' && showGalleryControls) {
+        event.preventDefault();
+        changeImage(1);
+      } else if (event.key === '+' || event.key === '=') {
+        event.preventDefault();
+        setImageZoom((zoom) => Math.min(3, zoom + 0.25));
+      } else if (event.key === '-' || event.key === '_') {
+        event.preventDefault();
+        setImageZoom((zoom) => Math.max(1, zoom - 0.25));
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [changeImage, lightboxOpen, showGalleryControls]);
+
   if (!project) {
     return (
       <section className="detail-shell">
@@ -336,12 +369,6 @@ function ProjectDetail({ projects, id }) {
   }
 
   const hasGithub = project.githublink && project.githublink !== 'N/A';
-  const activeImage = galleryImages[selectedImage];
-  const showGalleryControls = galleryImages.length > 1;
-  const changeImage = (direction) => {
-    setSelectedImage((current) => (current + direction + galleryImages.length) % galleryImages.length);
-    setImageZoom(1);
-  };
   const openLightbox = () => {
     setImageZoom(1);
     setLightboxOpen(true);
@@ -414,6 +441,7 @@ function ProjectDetail({ projects, id }) {
       {lightboxOpen && activeImage && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label={`${project.title} image preview`}>
           <div className="lightbox-toolbar">
+            {showGalleryControls && <span className="lightbox-count">{selectedImage + 1} / {galleryImages.length}</span>}
             <button type="button" onClick={() => setImageZoom((zoom) => Math.max(1, zoom - 0.25))} aria-label="Zoom out">
               <ZoomOut size={19} />
             </button>
@@ -426,12 +454,22 @@ function ProjectDetail({ projects, id }) {
             </button>
           </div>
           <div className="lightbox-stage" onClick={() => setLightboxOpen(false)}>
+            {showGalleryControls && (
+              <button type="button" className="lightbox-control previous" onClick={(event) => { event.stopPropagation(); changeImage(-1); }} aria-label="Previous image">
+                <ChevronLeft size={28} />
+              </button>
+            )}
             <img
               src={`/${activeImage}`}
               alt={`${project.title} enlarged screenshot ${selectedImage + 1}`}
               style={{ transform: `scale(${imageZoom})` }}
               onClick={(event) => event.stopPropagation()}
             />
+            {showGalleryControls && (
+              <button type="button" className="lightbox-control next" onClick={(event) => { event.stopPropagation(); changeImage(1); }} aria-label="Next image">
+                <ChevronRight size={28} />
+              </button>
+            )}
           </div>
         </div>
       )}

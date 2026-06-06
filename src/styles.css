@@ -731,6 +731,7 @@ main {
 }
 
 .lightbox-stage {
+  position: relative;
   overflow: auto;
   display: grid;
   place-items: center;
@@ -739,12 +740,51 @@ main {
 }
 
 .lightbox-stage img {
+  grid-area: 1 / 1;
   max-width: min(100%, 1200px);
   max-height: 100%;
   border-radius: 8px;
   transform-origin: center;
   transition: transform 140ms ease;
   cursor: default;
+}
+
+.lightbox-control {
+  position: sticky;
+  top: 50%;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1 / 1;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(3, 47, 60, 0.9);
+  color: var(--text);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: 160ms ease;
+}
+
+.lightbox-control:hover {
+  background: rgba(7, 41, 47, 0.96);
+  border-color: rgba(155, 239, 255, 0.62);
+}
+
+.lightbox-control.previous {
+  left: 18px;
+  justify-self: start;
+}
+
+.lightbox-control.next {
+  right: 18px;
+  justify-self: end;
+}
+
+.lightbox-count {
+  padding: 0 8px;
 }
 
 .resume-hero {
@@ -996,6 +1036,37 @@ footer a {
   .resume-contact a,
   .resume-contact span {
     width: 100%;
+  }
+
+  .lightbox {
+    padding: 10px;
+  }
+
+  .lightbox-toolbar {
+    gap: 3px;
+    max-width: 100%;
+  }
+
+  .lightbox-toolbar button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lightbox-toolbar span {
+    min-width: 48px;
+  }
+
+  .lightbox-control {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox-control.previous {
+    left: 8px;
+  }
+
+  .lightbox-control.next {
+    right: 8px;
   }
 }
 
