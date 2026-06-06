@@ -288,7 +288,6 @@ function Home({ projects }) {
 
       <section id="projects" className="projects-section">
         <div className="section-heading">
-          <p className="eyebrow"><Code2 size={16} /> Selected work</p>
           <h2>Projects</h2>
         </div>
         {categoryOrder.map((category) => (
@@ -353,7 +352,6 @@ function ProjectDetail({ projects, id }) {
       <SmartLink href="/" className="back-link"><ArrowLeft size={17} /> Back to home</SmartLink>
       <div className="detail-header">
         <div>
-          <p className="eyebrow"><Code2 size={16} /> {getCategory(project)}</p>
           <div className="detail-title-row">
             <h1>{project.title}</h1>
             {hasGithub && (
@@ -462,7 +460,6 @@ function Resume() {
       <div className="resume-hero">
         <img src="/assets/avatar.png" alt="Patrick Kikkert" />
         <div>
-          <p className="eyebrow"><UserRound size={16} /> Resume</p>
           <h1>Patrick Kikkert</h1>
           <p>{lang === 'nl' ? 'Programmeur & Creative Developer' : 'Programmer & Creative Developer'}</p>
         </div>
