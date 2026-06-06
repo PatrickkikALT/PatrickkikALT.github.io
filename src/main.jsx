@@ -244,7 +244,6 @@ function Home({ projects }) {
       <section className="hero">
         <div className="hero-copy">
           <div className="hero-content">
-            <p className="eyebrow"><Sparkles size={16} /> Software Developer from the Netherlands</p>
             <div className="hero-title-row">
               <h1>Patrick Kikkert</h1>
             </div>
@@ -544,7 +543,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const title = path.startsWith('/resume') ? 'Resume - Patrick Kikkert' : 'Patrick Kikkert';
+    const title = path.startsWith('/resume') ? 'Resume - Patrick Kikkert' : 'Portfolio Patrick Kikkert';
     document.title = title;
   }, [path]);
 
@@ -563,8 +562,10 @@ function App() {
       <Header currentPath={`${url.pathname}${url.hash}`} />
       <main>{page}</main>
       <footer>
-        <span>Patrick Kikkert</span>
+        <span>© 2026 Patrick Kikkert</span>
+
         <a href="mailto:pa.kikkert@gmail.com">pa.kikkert@gmail.com</a>
+
       </footer>
     </div>
   );

@@ -206,7 +206,7 @@ main {
   align-self: center;
   justify-self: center;
   padding: 7px;
-  border-radius: 42% 58% 48% 52% / 52% 42% 58% 48%;
+  border-radius: 50%;
   object-fit: cover;
   border: 1px solid rgba(155, 239, 255, 0.28);
   background:
@@ -229,7 +229,7 @@ main {
 .hero-copy h1 {
   max-width: 720px;
   margin: 0;
-  font-size: clamp(4rem, 15vw, 9rem);
+  font-size: clamp(4rem, 15vw, 6rem);
   line-height: 0.82;
   letter-spacing: 0;
 }
