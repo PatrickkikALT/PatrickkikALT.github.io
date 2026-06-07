@@ -149,16 +149,18 @@
     "id": "raylibminecraft",
     "title": "Raylib Minecraft",
     "description": "Minecraft clone built using the raylib C++ library.",
-    "githublink": "https://github.com/PatrickkikALT/raylib",
+    "githublink": "https://github.com/PatrickkikALT/raylib-minecraft",
     "information": [
-      "A simple Minecraft clone built using the raylib C++ library that features a basic world generation system where players can remove blocks. This project was done solo to learn more C++."
+      "A simple Minecraft clone built in raylib with C++, this clone features basic world generation, block removal and entities. This was a fun project to learn more about C++. This was done entirely solo."
     ],
     "languages": ["C++", "Raylib"],
     "features": [
       "World generation",
-      "Block removal"
+      "Block removal",
+      "Entities",
+      "High fps"
     ],
-    "images": []
+    "images": ["assets/projects/raylibminecraft.png", "assets/projects/raylibminecraft2.png", "assets/projects/raylibminecraft3.png"]
   },
   {
     "thumbnail": "assets/projects/renderer.gif",
