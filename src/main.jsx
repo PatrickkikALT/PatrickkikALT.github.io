@@ -378,7 +378,7 @@ function ProjectDetail({ projects, id }) {
     <section className="detail-shell">
       <SmartLink href="/" className="back-link"><ArrowLeft size={17} /> Back to home</SmartLink>
       <div className="detail-header">
-        <div>
+        <div className="detail-copy">
           <div className="detail-title-row">
             <h1>{project.title}</h1>
             {hasGithub && (
@@ -397,6 +397,11 @@ function ProjectDetail({ projects, id }) {
               <div>
                 {project.features.map((feature) => <span key={feature}>{feature}</span>)}
               </div>
+            </div>
+          )}
+          {project.information?.length > 0 && (
+            <div className="article-flow">
+              {project.information.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           )}
         </div>
@@ -471,12 +476,6 @@ function ProjectDetail({ projects, id }) {
               </button>
             )}
           </div>
-        </div>
-      )}
-
-      {project.information?.length > 0 && (
-        <div className="article-flow">
-          {project.information.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
       )}
 
