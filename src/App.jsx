@@ -32,8 +32,9 @@ export function App() {
     document.title = title;
   }, [path, t]);
 
-  console.log("What were you hoping to find here?")
-  console.log("'I was attacked, obviously. By vast quantities of alcohol, wielded by my own treacherous hand' - Lorath from Diablo IV")
+  useEffect(() => {
+    console.log("'I was attacked, obviously. By vast quantities of alcohol, wielded by my own treacherous hand' - Lorath from Diablo IV")
+  }, []);
   const url = new URL(window.location.href);
   const legacyProjectId = url.searchParams.get('id');
   const projectMatch = url.pathname.match(/^\/projects\/?([^/]*)/);
