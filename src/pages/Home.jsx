@@ -9,6 +9,8 @@ import { SmartLink } from '../components/SmartLink';
 export function Home({ projects }) {
   const { t } = useLanguage();
   const validProjects = projects.filter((project) => project.id);
+  console.log("What were you hoping to find here?")
+  console.log("'I was attacked, obviously. By vast quantities of alcohol, wielded by my own treacherous hand' - Lorath from Diablo IV")
   const grouped = useMemo(() => {
     return categoryOrder.reduce((acc, category) => {
       acc[category.key] = validProjects.filter((project) => getCategory(project) === category.key);
