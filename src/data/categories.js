@@ -1,7 +1,7 @@
 export const categoryOrder = [
-  { key: 'games', title: 'Games', description: 'My unity projects' },
-  { key: 'editor', title: 'Editor', description: 'Tools built to smooth out Unity workflows.' },
-  { key: 'misc', title: 'Misc', description: 'Miscellaneous projects.' },
+  { key: 'games' },
+  { key: 'editor' },
+  { key: 'misc' },
 ];
 
 export const categorySets = {

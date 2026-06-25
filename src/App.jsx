@@ -1,13 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Header } from './components/Header';
+import { useLanguage } from './context/LanguageContext';
 import { Home } from './pages/Home';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { Resume } from './pages/Resume';
+import { localizeProjects } from './utils/projects';
 
 export function App() {
+  const { t, lang } = useLanguage();
   const [path, setPath] = useState(window.location.pathname + window.location.search + window.location.hash);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const localizedProjects = useMemo(() => localizeProjects(projects, lang), [projects, lang]);
 
   useEffect(() => {
     const handlePop = () => setPath(window.location.pathname + window.location.search + window.location.hash);
@@ -23,19 +27,19 @@ export function App() {
   }, []);
 
   useEffect(() => {
-    const title = path.startsWith('/resume') ? 'Resume - Patrick Kikkert' : 'Portfolio Patrick Kikkert';
+    const title = path.startsWith('/resume') ? t('meta.resumeTitle') : t('meta.portfolioTitle');
     document.title = title;
-  }, [path]);
+  }, [path, t]);
 
   const url = new URL(window.location.href);
   const legacyProjectId = url.searchParams.get('id');
   const projectMatch = url.pathname.match(/^\/projects\/?([^/]*)/);
   const projectId = projectMatch?.[1] || legacyProjectId;
 
-  let page = <Home projects={projects} />;
-  if (loading) page = <main className="loading">Loading portfolio...</main>;
+  let page = <Home projects={localizedProjects} />;
+  if (loading) page = <main className="loading">{t('common.loading')}</main>;
   else if (url.pathname.startsWith('/resume')) page = <Resume />;
-  else if (url.pathname.startsWith('/projects') && projectId) page = <ProjectDetail projects={projects} id={projectId} />;
+  else if (url.pathname.startsWith('/projects') && projectId) page = <ProjectDetail projects={localizedProjects} id={projectId} />;
 
   return (
     <div>

@@ -168,6 +168,12 @@ main {
   gap: 4px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .social-strip img {
   width: 22px;
   height: 22px;
@@ -914,12 +920,17 @@ footer a {
 
 @media (max-width: 860px) {
   .site-header {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr auto auto;
   }
 
   .nav-toggle {
     display: inline-flex;
     justify-self: end;
+    grid-column: 3;
+  }
+
+  .header-actions {
+    grid-column: 2;
   }
 
   .nav-links,
