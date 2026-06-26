@@ -1085,7 +1085,7 @@ footer a {
   }
 }
 
-.konami-flipje {
+.flipje {
   position: fixed;
   bottom: 14%;
   left: 0;
@@ -1093,10 +1093,10 @@ footer a {
   width: min(34vw, 220px);
   height: auto;
   pointer-events: none;
-  animation: konami-run 0.7s linear forwards;
+  animation: flipje-run 0.7s linear forwards;
 }
 
-@keyframes konami-run {
+@keyframes flipje-run {
   0% {
     transform: translateX(-120%) translateY(0);
   }
@@ -1140,6 +1140,81 @@ footer a {
   100% {
     transform: translateX(calc(100vw + 120%)) translateY(0);
   }
+}
+
+.snake-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.snake-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.snake-hud {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: min(1180px, calc(100% - 28px));
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(3, 47, 60, 0.86);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+  font-family: Josefin, Inter, system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.snake-hud-score {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 14px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.snake-hud-hint {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .snake-hud {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    white-space: normal;
+  }
+
+  .snake-hud-hint {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 8px;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
+.snake-eaten {
+  opacity: 0 !important;
+  transform: scale(0.6) !important;
+  transition: opacity 0.18s ease, transform 0.18s ease !important;
+  pointer-events: none !important;
 }
 
 @media print {

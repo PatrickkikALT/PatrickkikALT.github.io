@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Header } from './components/Header';
-import { KonamiEasterEgg } from './components/KonamiEasterEgg';
+import { FlipjeEasterEgg } from './components/FlipjeEasterEgg';
+import { KonamiSnake } from './components/KonamiSnake';
 import { useLanguage } from './context/LanguageContext';
 import { Home } from './pages/Home';
 import { ProjectDetail } from './pages/ProjectDetail';
@@ -47,7 +48,8 @@ export function App() {
 
   return (
     <div>
-      <KonamiEasterEgg />
+      <FlipjeEasterEgg />
+      <KonamiSnake />
       <Header currentPath={`${url.pathname}${url.hash}`} />
       <main>{page}</main>
       <footer>
