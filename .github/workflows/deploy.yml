@@ -33,3 +33,4 @@ jobs:
           publish_branch: main 
           publish_dir: ./docs 
           force_orphan: true
+          cname: patrickkikkert.nl
