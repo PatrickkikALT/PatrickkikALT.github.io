@@ -35,8 +35,8 @@ export const translations = {
       introP1BeforeGithub:
         'My name is Patrick Kikkert. This website serves as a hub for things I want to put out there and projects I am proud of. You can find all of my projects over on my ',
       introP1AfterGithub: '.',
-      introP2BeforeDiscord: 'For non-work related contact, the fastest way is through my ',
-      introP2BetweenDiscordAndEmail: '. For work related purposes, email me at ',
+      introP2BeforeDiscord: 'If you wish to contact me, you can reach me via ',
+      introP2BetweenDiscordAndEmail: ' ',
       introP2AfterEmail: '.',
       projectsHeading: 'Projects',
     },
