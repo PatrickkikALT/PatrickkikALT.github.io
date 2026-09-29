@@ -473,5 +473,33 @@ export const projectTranslations = {
         "De tool maakt verbinding met een SQL database die de lock state van elke scene opslaat, waarmee je via de tool kunt interacteren. De tool heeft ook extra manieren om de lock state van een scene te tonen, zoals het tonen van een rode icon op de scene in de hierarchy, en het tonen van een waarschuwing wanneer je probeert een vergrendelde scene te openen."
       ]
     }
+  },
+  "blackhole": {
+    "title": {
+      "en": "Black Hole Simulation",
+      "nl": "Zwart Gat simulatie"
+    },
+    "description": {
+      "en": "A simulation of a black hole in Unity",
+      "nl": "Een simulatie van een zwart gat in Unity"
+    },
+    "features": {
+      "en": [
+        "Black hole",
+        "What more can I say? It's a black hole."
+      ],
+      "nl": [
+        "Zwart gat",
+        "Wat kan ik nog meer zeggen? Het is een zwart gat."
+      ]
+    },
+    "information": {
+      "en": [
+        "A volumetric shader in Unity that simulates a Black Hole. I made this because a friend of mine was messing around with shaders and accidentally made something resembling a black hole, causing me to become inspired to make one. I decided to base it on the black hole in Interstellar, because it looks cool.",
+      ],
+      "nl": [
+        "Een volumetric shader in Unity die een zwart gat simuleert. Ik heb dit gemaakt omdat een vriend van mij zat te spelen met shaders en per ongeluk iets maakte dat op een zwart gat leek, hierdoor werd ik geïnspireerd om eentje te maken. Ik had besloten om het te baseren op de zwart gat in Interstaller, omdat die er cool uit ziet."
+      ]
+    }
   }
 };
