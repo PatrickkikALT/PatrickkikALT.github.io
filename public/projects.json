@@ -21,6 +21,18 @@
     "images": []
   },
   {
+    "thumbnail": "assets/projects/blackhole.png",
+    "id": "blackhole",
+    "githublink": "https://github.com/PatrickkikALT/Black-Hole",
+    "languages": [
+      "C#",
+      "HLSL"
+    ],
+    "images": [
+      "assets/projects/blackhole.gif"
+    ]
+  },
+  {
     "thumbnail": "assets/projects/breakntake.png",
     "id": "breakntake",
     "githublink": "https://github.com/PatrickkikALT/Periode3-Project",
@@ -160,18 +172,6 @@
     "images": [
       "assets/projects/scenelocktool2.png",
       "assets/projects/scenelocktool3.png"
-    ]
-  },
-  {
-    "thumbnail": "assets/projects/blackhole.png",
-    "id": "blackhole",
-    "githublink": "https://github.com/PatrickkikALT/Black-Hole",
-    "languages": [
-      "C#",
-      "HLSL"
-    ],
-    "images": [
-      "assets/projects/blackhole.gif"
     ]
   }
 ]
