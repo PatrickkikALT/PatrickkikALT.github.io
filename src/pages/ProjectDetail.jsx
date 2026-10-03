@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ArrowLeft,
+  Calendar,
   ChevronLeft,
   ChevronRight,
   Github,
@@ -8,8 +9,23 @@ import {
   ZoomIn,
   ZoomOut,
 } from 'lucide-react';
+import { CodeSnippet } from '../components/CodeSnippet';
 import { SmartLink } from '../components/SmartLink';
 import { useLanguage } from '../context/LanguageContext';
+
+function ArticleParagraph({ text }) {
+  const parts = text.split(/(`[^`\n]+`)/g);
+
+  return (
+    <p>
+      {parts.map((part, index) => (
+        part.startsWith('`') && part.endsWith('`')
+          ? <code key={index}>{part.slice(1, -1)}</code>
+          : part
+      ))}
+    </p>
+  );
+}
 
 export function ProjectDetail({ projects, id }) {
   const { t } = useLanguage();
@@ -92,6 +108,12 @@ export function ProjectDetail({ projects, id }) {
           </div>
           <p>{project.description}</p>
           <div className="meta-row">
+            {project.year && (
+              <span className="meta-year" aria-label={t('project.createdIn', { year: project.year })}>
+                <Calendar size={14} aria-hidden="true" />
+                {project.year}
+              </span>
+            )}
             {project.languages?.map((language) => <span key={language}>{language}</span>)}
           </div>
           {project.features?.length > 0 && (
@@ -104,7 +126,7 @@ export function ProjectDetail({ projects, id }) {
           )}
           {project.information?.length > 0 && (
             <div className="article-flow">
-              {project.information.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {project.information.map((paragraph) => <ArticleParagraph key={paragraph} text={paragraph} />)}
             </div>
           )}
         </div>
@@ -145,6 +167,15 @@ export function ProjectDetail({ projects, id }) {
           </div>
         )}
       </div>
+
+      {project.snippets?.length > 0 && (
+        <div className="snippet-section">
+          <h2>{t('project.code')}</h2>
+          {project.snippets.map((snippet, index) => (
+            <CodeSnippet key={`${snippet.filename}-${snippet.title}-${index}`} snippet={snippet} />
+          ))}
+        </div>
+      )}
 
       {lightboxOpen && activeImage && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label={t('project.imagePreview', { title: project.title })}>

@@ -5,7 +5,7 @@ export const categoryOrder = [
 ];
 
 export const categorySets = {
-  games: new Set(['chunivr', 'factory51', 'blackhole', 'breakntake', 'pouventure', 'pestpatrol', 'bubblegame']),
+  games: new Set(['chunivr', 'factory51', 'blackhole', 'breakntake', 'pouventure', 'bubblegame', 'aimtrainer']),
   editor: new Set(['variablesignalreceiver', 'localisation', 'scenelocktool']),
   misc: new Set(['massremovearcs', 'raylibminecraft', 'steganography', 'cpprenderer', 'storingbot', 'disruptiveaudiobot']),
 };

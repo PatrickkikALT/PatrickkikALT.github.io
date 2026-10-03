@@ -11,9 +11,29 @@ function pickLocalized(field, lang) {
   return field[defaultLanguage] ?? (Array.isArray(field) ? [] : '');
 }
 
+function trimCode(code) {
+  return String(code ?? '').replace(/\r\n/g, '\n').replace(/^\n+/, '').replace(/\s+$/, '');
+}
+
+function localizeSnippets(snippets, lang) {
+  if (!Array.isArray(snippets)) return [];
+
+  return snippets
+    .filter((snippet) => snippet && trimCode(typeof snippet.code === 'string' ? snippet.code : pickLocalized(snippet.code, lang)))
+    .map((snippet) => ({
+      language: snippet.language || 'text',
+      filename: snippet.filename || '',
+      title: pickLocalized(snippet.title, lang),
+      caption: pickLocalized(snippet.caption, lang),
+      code: trimCode(typeof snippet.code === 'string' ? snippet.code : pickLocalized(snippet.code, lang)),
+    }));
+}
+
 export function localizeProject(project, lang) {
   const copy = projectTranslations[project.id];
-  if (!copy) return project;
+  const snippets = localizeSnippets(copy?.snippets?.length ? copy.snippets : project.snippets, lang);
+
+  if (!copy) return { ...project, snippets };
 
   return {
     ...project,
@@ -21,6 +41,7 @@ export function localizeProject(project, lang) {
     description: pickLocalized(copy.description, lang),
     features: pickLocalized(copy.features, lang),
     information: pickLocalized(copy.information, lang),
+    snippets,
   };
 }
 
